@@ -20,7 +20,7 @@ while true; do
         CHECK_STANDBY=1
     fi
 
-    for devpath in /sys/block/sd[b-z]; do
+    for devpath in /sys/block/sd*; do
         [ -e "$devpath" ] || continue
         dev=$(basename "$devpath")
         realpath=$(readlink -f "$devpath")
